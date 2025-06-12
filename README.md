@@ -10,7 +10,7 @@ You've just teleported into my WinAPI goldmine, you're the lucky few who've foun
 
 **🕵️‍♂️ The Quest for WinAPI Knowledge**
 
-Picture this: There I was, lost in the digital deserts, searching for knowledge mines containing **organized** Windows API wisdom. 🔍
+Picture this: There I was, lost in the digital deserts, searching for knowledge mines containing **organized** Windows API wisdom so that I can branch later on to reverse engineering and malware analysis. 🔍
 
 ![image](https://github.com/user-attachments/assets/e04ec000-99a2-48fe-b0f0-b02f5be5d87f)
 
