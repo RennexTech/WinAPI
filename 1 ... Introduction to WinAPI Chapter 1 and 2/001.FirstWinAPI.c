@@ -2,6 +2,9 @@
 HelloMsg.c – Displays "Hello, Windows 11!" in a message box
 Based on Charles Petzold’s classic example (c) 1998
 Updated for vibes in 2025 ✨
+
+// Note that the labelling of the pdfs doesn't go hand in hand with the .c files.
+// So once you read a subtopic, you actually check which .c file belongs to that subtopic. 
 ------------------------------------------------------------*/
 
 #include <windows.h>
