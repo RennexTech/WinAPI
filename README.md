@@ -14,7 +14,19 @@ Picture this: There I was, lost in the digital deserts, searching for knowledge 
 
 ![image](https://github.com/user-attachments/assets/e04ec000-99a2-48fe-b0f0-b02f5be5d87f)
 
-What did I find? Dusty ancient scrolls (aka outdated books and forgotten forums). 📚 That was painful folks. There was absolutely nobody willing to teach me WinAPI for free and I mean, how are we supposed to master operating systems without solid WinAPI resources? 
+What did I find? Just a bunch of dusty ancient scrolls — outdated books, broken links, and long-forgotten Chinese and Russian forums. 📚 Painful stuff. There was literally no one breaking this down for free in a way that made sense.
+And honestly — how are we supposed to master operating systems if WinAPI itself is locked behind arcane knowledge walls?
+
+So I tried opening tools like IDA Pro and Ghidra (which I still barely understand), and suddenly I was like:
+
+“Wait… Isn’t this the same stuff from that old Charles Petzold book on WinAPI?”
+
+Then it hit me:
+While I was struggling with CreateWindow, there were 17-year-old reverse engineering gods in underground Russian and Chinese forums casually posting cracked slot machine binaries, porting code to WinAPI like it was a hobby.
+
+Meanwhile, I’m sitting there thinking:
+
+“Bro... what the hell?! These guys and girls are out here chewing IDA for breakfast.”
 
 ![image](https://github.com/user-attachments/assets/f9119b7f-0325-4807-a11e-357209e95e97)
 
@@ -38,7 +50,7 @@ Anyone who's ever yelled "WHY ISN'T THERE A DECENT TUTORIAL FOR THIS?!" at 3 AM 
 
 I've poured my blood, sweat, and tears (mostly tears) into this project. It's my gift to you - the next generation of Windows programmers. 
 
-Am 22 by the way(2024), and am in no way a master at this stuff. 🧙‍♂️✨
+Am 23 by the way(2025), and am in no way a master at this stuff. 🧙‍♂️✨
 
 Am here to keep the flame of low-level programming burning bright!
 
