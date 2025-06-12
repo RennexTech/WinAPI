@@ -50,7 +50,7 @@ Anyone who's ever yelled "WHY ISN'T THERE A DECENT TUTORIAL FOR THIS?!" at 3 AM 
 
 I've poured my blood, sweat, and tears (mostly tears) into this project. It's my gift to you - the next generation of Windows programmers. 
 
-Am 22 by the way(2024), and am in no way a master at this stuff. 🧙‍♂️✨
+Am 23 by the way(2025), and am in no way a master at this stuff. 🧙‍♂️✨
 
 Am here to keep the flame of low-level programming burning bright!
 
