@@ -19,14 +19,14 @@ And honestly — how are we supposed to master operating systems if WinAPI itsel
 
 So I tried opening tools like IDA Pro and Ghidra (which I still barely understand), and suddenly I was like:
 
-“Wait… why does this code look familiar? Isn’t this the same stuff from that old Charles Petzold book on WinAPI?”
+“Wait… Isn’t this the same stuff from that old Charles Petzold book on WinAPI?”
 
 Then it hit me:
 While I was struggling with CreateWindow, there were 17-year-old reverse engineering gods in underground Russian and Chinese forums casually posting cracked slot machine binaries, porting code to WinAPI like it was a hobby.
 
 Meanwhile, I’m sitting there thinking:
 
-“Bro... what the hell?! These kids are out here eating IDA for breakfast.”
+“Bro... what the hell?! These guys and girls are out here chewing IDA for breakfast.”
 
 ![image](https://github.com/user-attachments/assets/f9119b7f-0325-4807-a11e-357209e95e97)
 
