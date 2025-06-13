@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Virtual Keys (VK_ Codes) Cheat Sheet</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #eaf6fd;
+        }
+        td:first-child {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        th:first-child { border-top-left-radius: 8px; }
+        th:last-child { border-top-right-radius: 8px; }
+        tr:last-child td:first-child { border-bottom-left-radius: 8px; }
+        tr:last-child td:last-child { border-bottom-right-radius: 8px; }
+        tr:last-child td { border-bottom: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Common Virtual Keys (<code>VK_</code> Codes)</h1>
+        <p>The <code>VK_</code> codes are special numerical identifiers for physical keys on your keyboard. When a user presses a key, the system sends a message to the program indicating which key was pressed. This message includes a <code>wParam</code> value that is usually the <code>VK_</code> code for the physical key. These codes are used in programming to detect key presses and perform corresponding actions like opening menus, submitting forms, or controlling games. The key difference between <code>WM_KEYDOWN</code> (which detects the physical key) and <code>WM_CHAR</code> (which detects the actual character typed) is important when you're working with events in a program.</p>
+        
+        <p>Here’s a cheat sheet for some of the most common <code>VK_</code> codes that you might encounter:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Virtual Key Code</th>
+                    <th>What It Means (The Key)</th>
+                    <th>Use Case Vibe</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>VK_ESCAPE</code></td>
+                    <td>The 'Esc' key</td>
+                    <td>"Nah, cancel that." - Often used to exit or cancel operations like closing windows or quitting games. It's the ultimate "nope" key, especially useful for canceling or backing out of something.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_RETURN</code></td>
+                    <td>The 'Enter' key</td>
+                    <td>"Let's go!" - Used for submitting forms, confirming choices, or creating a new line in a text input. It’s a key that signals "go ahead" or "confirm."</td>
+                </tr>
+                <tr>
+                    <td><code>VK_SPACE</code></td>
+                    <td>The 'Spacebar'</td>
+                    <td>"Jump!" or "Pause." - The spacebar is vital in games for actions like jumping or pausing. It's also the key to typing spaces between words. It toggles a lot of actions beyond just typing!</td>
+                </tr>
+                <tr>
+                    <td><code>VK_BACK</code></td>
+                    <td>The 'Backspace' key</td>
+                    <td>"Oops, erase that." - Used for deleting characters or items in text input fields, this key is your "undo" in typing.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_TAB</code></td>
+                    <td>The 'Tab' key</td>
+                    <td>"Next field, please!" - It helps you navigate through different fields in forms or text boxes. It's often used for moving from one area to another without using the mouse.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_DELETE</code></td>
+                    <td>The 'Delete' key</td>
+                    <td>"Poof, it's gone!" - Used for removing selected items or characters after you’ve highlighted them. It's another way to erase content.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_LEFT</code></td>
+                    <td>Left Arrow key</td>
+                    <td>"Go left!" - Used for moving left, navigating menus, or in games to control movement of a character or object.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_UP</code></td>
+                    <td>Up Arrow key</td>
+                    <td>"Go up!" - This key is used for navigating upwards through menus, scrolling up, or moving a cursor or character upwards.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_RIGHT</code></td>
+                    <td>Right Arrow key</td>
+                    <td>"Go right!" - Similar to the left arrow, but this key moves your selection or character to the right.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_DOWN</code></td>
+                    <td>Down Arrow key</td>
+                    <td>"Go down!" - Used for navigating down through menus, scrolling down, or moving characters downward in games.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_SHIFT</code></td>
+                    <td>Either Shift key</td>
+                    <td>"Hold on to this." - Often paired with other keys to perform special actions, such as creating capital letters or activating shortcuts like Shift + Click for extra functionality.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_CONTROL</code></td>
+                    <td>Either Ctrl key</td>
+                    <td>"Power move!" - A key that gets paired with others for common actions like Ctrl + C to copy or Ctrl + V to paste. It’s the foundation of many keyboard shortcuts!</td>
+                </tr>
+                <tr>
+                    <td><code>VK_MENU</code></td>
+                    <td>Either Alt key</td>
+                    <td>"Menu time!" - Often used to open menus or perform actions like Alt + F to open the File menu. It’s another key that powers lots of shortcuts.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_F1</code> to <code>VK_F24</code></td>
+                    <td>Function keys (F1, F2, etc.)</td>
+                    <td>"Shortcut central!" - These function keys are often linked to specific actions, like F1 for Help, F5 for Refresh, or F12 for Developer tools in browsers.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_0</code> to <code>VK_9</code></td>
+                    <td>Number keys (0-9)</td>
+                    <td>"Counting on it." - Used to type numbers directly. These keys are essential for data entry, calculations, and more.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_A</code> to <code>VK_Z</code></td>
+                    <td>Letter keys (A-Z)</td>
+                    <td>"Typing it out." - These are the basic alphabet keys that you use to type out words. Each key represents a letter from A to Z.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_ADD</code></td>
+                    <td>Numpad '+' key</td>
+                    <td>"Add it up!" - For performing addition tasks in calculators or other mathematical programs.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_SUBTRACT</code></td>
+                    <td>Numpad '-' key</td>
+                    <td>"Take it away." - For performing subtraction in math-related tasks.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_MULTIPLY</code></td>
+                    <td>Numpad '*' key</td>
+                    <td>"Times that!" - Used for multiplication in calculators or other mathematical inputs.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_DIVIDE</code></td>
+                    <td>Numpad '/' key</td>
+                    <td>"Split it evenly." - Used for division in mathematical tasks.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_OEM_1</code></td>
+                    <td>Semicolon (';') key</td>
+                    <td>"Punctuation check!" - This key varies depending on the keyboard layout, but it’s often associated with typing punctuation marks.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_OEM_2</code></td>
+                    <td>Question mark ('?') key</td>
+                    <td>"What's up?" - A special key that’s used for typing the question mark, depending on your layout.</td>
+                </tr>
+                <tr>
+                    <td><code>VK_OEM_3</code></td>
+                    <td>Tilde ('~') key</td>
+                    <td>"Wavy, dude." - Often used for typing the tilde (~) symbol or opening developer consoles in games or browsers.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
