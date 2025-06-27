@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Function Reference - Tight & Right</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif; /* A fresh, modern font for clarity */
+            background-color: #f8f9fa; /* Super light grey, almost white */
+            color: #212529; /* Dark grey for easy reading */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to the top, not center vertically */
+            min-height: 98vh; /* Give it nearly full height */
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            line-height: 1.6; /* A bit more space for comfy reading */
+        }
+
+        .container {
+            background-color: #ffffff; /* Crisp white background */
+            border-radius: 10px; /* Nicely rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* A subtle, modern shadow */
+            overflow: hidden;
+            width: 100%;
+            max-width: 900px; /* Slightly wider to fit content better */
+            padding: 25px 35px; /* Adjust internal padding */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #007bff; /* A vibrant blue for the heading */
+            margin-bottom: 25px; /* Space below the heading */
+            font-size: 2em; /* Slightly smaller, more refined heading */
+            font-weight: 700; /* Bold and impactful */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 8px; /* Slightly less space between rows */
+            margin-top: 15px; /* Less space above the table */
+        }
+
+        th, td {
+            padding: 12px 18px; /* Reduced padding for a tighter fit */
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff; /* Using the same vibrant blue for headers */
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        th:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 8px;
+        }
+
+        tr {
+            background-color: #fefefe;
+            transition: background-color 0.2s ease; /* Faster transition for snappier feel */
+        }
+
+        tr:nth-child(even) {
+            background-color: #f5f5f5; /* A little bit darker for even rows */
+        }
+
+        tr:hover {
+            background-color: #e6f7ff; /* Lighter blue on hover */
+            transform: translateY(-1px); /* A very subtle lift */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Smaller, softer shadow on hover */
+        }
+
+        td {
+            border-bottom: 1px solid #eee;
+            vertical-align: top; /* Align text to the top of the cell */
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .function-name {
+            font-weight: 700;
+            color: #333; /* Darker grey for function names */
+        }
+
+        .purpose-description {
+            font-style: normal; /* No italics, makes it cleaner */
+            color: #555;
+            margin: 0; /* Remove default paragraph margins */
+            padding: 0; /* Remove default paragraph padding */
+        }
+
+        .purpose-description p {
+            margin-bottom: 8px; /* Small margin between paragraphs in description */
+        }
+
+        .purpose-description p:last-child {
+            margin-bottom: 0; /* No margin after the last paragraph */
+        }
+
+        /* Responsive adjustments for smaller screens - still good, but now less text-heavy */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px 20px;
+                max-width: 100%; /* Use full width on smaller screens */
+            }
+
+            h1 {
+                font-size: 1.6em;
+                margin-bottom: 20px;
+            }
+
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                margin-bottom: 10px; /* Less space between stacked rows */
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 40%; /* Adjusted for a tighter fit */
+                text-align: right;
+                word-wrap: break-word; /* Ensure long words break */
+            }
+
+            td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(40% - 20px);
+                padding-right: 10px;
+                white-space: normal; /* Allow label to wrap if needed */
+                text-align: left;
+                font-weight: 600;
+                color: #212529;
+            }
+
+            td:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* Even smaller screens */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            td {
+                padding-left: 35%; /* Further adjustment for very small screens */
+            }
+            td:before {
+                width: calc(35% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Windows Scroll Functions: Quick Guide</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Function</th>
+                    <th>What It Does (The Real Talk)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="function-name" data-label="Function">SetScrollRange()</td>
+                    <td class="purpose-description" data-label="What It Does (The Real Talk)">
+                        <p>This sets the min and max scroll positions for a window's scrollbar. Imagine setting the start and end points for a racing track; your scrollbar can only move within those bounds.</p>
+                        <p>It's defining the full potential scrollable area, like telling your app, "Hey, this content goes from here to way down there!"</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="function-name" data-label="Function">SetScrollPos()</td>
+                    <td class="purpose-description" data-label="What It Does (The Real Talk)">
+                        <p>Use this to directly move the scrollbar's thumb (that little draggable square) to a specific spot within its defined range. Think of it like instantly jumping to a specific page number in a book.</p>
+                        <p>Super useful for when you need to programmatically snap the user's view to a certain part of the content.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="function-name" data-label="Function">GetScrollPos()</td>
+                    <td class="purpose-description" data-label="What It Does (The Real Talk)">
+                        <p>This function reads the current position of the scrollbar's thumb. It tells you exactly where the user is "looking" within the scrollable content.</p>
+                        <p>It's like checking the current page number you're on in a really long document, letting your app know the user's current view.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="function-name" data-label="Function">ScrollWindowEx()</td>
+                    <td class="purpose-description" data-label="What It Does (The Real Talk)">
+                        <p>This is where things get cool: it shifts the actual content within the window, not just the scrollbar. Think of it as literally dragging the canvas of your application around to reveal new parts.</p>
+                        <p>If you've got a lot of content and want to move it around, maybe after a resize or for a special effect, this function slides it all over. It can even fill the newly exposed areas with a custom background, like magically extending your view!</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

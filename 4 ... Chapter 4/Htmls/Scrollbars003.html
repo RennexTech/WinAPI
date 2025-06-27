@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Shortcuts - Level Up Accessibility</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 98vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            line-height: 1.6;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            width: 100%;
+            max-width: 900px;
+            padding: 25px 35px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #28a745; /* A fresh green for accessibility focus */
+            margin-bottom: 25px;
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 8px;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px 18px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #28a745; /* Green header to match the heading */
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        th:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 8px;
+        }
+
+        tr {
+            background-color: #fefefe;
+            transition: background-color 0.2s ease;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        tr:hover {
+            background-color: #e6ffed; /* Light green on hover */
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        td {
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .key-name {
+            font-weight: 700;
+            color: #333;
+        }
+
+        .action-description {
+            font-style: normal;
+            color: #555;
+            margin: 0;
+            padding: 0;
+        }
+
+        .action-description p {
+            margin-bottom: 8px;
+        }
+
+        .action-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px 20px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                margin-bottom: 20px;
+            }
+
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 40%;
+                text-align: right;
+                word-wrap: break-word;
+            }
+
+            td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(40% - 20px);
+                padding-right: 10px;
+                white-space: normal;
+                text-align: left;
+                font-weight: 600;
+                color: #212529;
+            }
+
+            td:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* Even smaller screens */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            td {
+                padding-left: 35%;
+            }
+            td:before {
+                width: calc(35% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Keyboard Shortcuts: Level Up Your App's Accessibility</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Key (VK_ Value)</th>
+                    <th>What It Does (The Shortcut Play)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="key-name" data-label="Key (VK_Value)">VK_UP</td>
+                    <td class="action-description" data-label="What It Does (The Shortcut Play)">
+                        <p>When the user presses the Up Arrow key, your app should handle this by scrolling the content up by one line. Think of it like reading a document and pressing the up arrow to gently nudge the view up, showing the previous line.</p>
+                        <p>This is a super common and intuitive way for users to navigate text or lists without needing a mouse.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key-name" data-label="Key (VK_ Value)">VK_DOWN</td>
+                    <td class="action-description" data-label="What It Does (The Shortcut Play)">
+                        <p>When the Down Arrow key is pressed, your app should scroll the content down by one line. It's the exact opposite of `VK_UP`, allowing users to move forward through content line by line.</p>
+                        <p>Essential for smooth, controlled reading and navigating through any scrollable area with precision.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key-name" data-label="Key (VK_ Value)">VK_PRIOR</td>
+                    <td class="action-description" data-label="What It Does (The Shortcut Play)">
+                        <p>This virtual key code corresponds to the Page Up key. When hit, your app should scroll the content up by a full page. Imagine flipping back one page in an e-book instantly.</p>
+                        <p>It's for rapid navigation when you want to see a whole chunk of previous information without having to scroll slowly.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key-name" data-label="Key (VK_ Value)">VK_NEXT</td>
+                    <td class="action-description" data-label="What It Does (The Shortcut Play)">
+                        <p>This is for the Page Down key. When activated, your app should scroll the content down by a full page. Like skipping ahead a full screen of text or data.</p>
+                        <p>Super useful for quickly Browse through long documents or feeds, jumping to the next visible section.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key-name" data-label="Key (VK_ Value)">VK_HOME</td>
+                    <td class="action-description" data-label="What It Does (The Shortcut Play)">
+                        <p>When the Home key is pressed, your application should instantly scroll all the way to the very top of the content. Think of it as a "rewind to the beginning" button for your scrollable area.</p>
+                        <p>This saves users from endless scrolling to get back to the start, making navigation super efficient.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="key-name" data-label="Key (VK_ Value)">VK_END</td>
+                    <td class="action-description" data-label="What It Does (The Shortcut Play)">
+                        <p>Hitting the End key should make your app scroll directly to the very bottom of the content. It's the express train to the finish line of any scrollable view.</p>
+                        <p>Perfect for quickly getting to the latest information in a log, chat, or a long document's conclusion.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
