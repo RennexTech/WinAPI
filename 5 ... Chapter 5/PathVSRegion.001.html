@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinAPI Path vs. Region</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to ensure the table looks good and is centered */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font as specified */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align at the start to prevent vertical centering taking up too much space */
+            min-height: 100vh; /* Minimum height for full viewport */
+            background-color: #f0f4f8; /* Light background */
+            padding: 20px; /* Padding around the content */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+        .container {
+            max-width: 900px; /* Max width for the table container */
+            width: 100%; /* Full width up to max-width */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: #ffffff; /* White background for the table card */
+            border-radius: 0.75rem; /* Rounded corners for the container */
+            overflow: hidden; /* Ensures rounded corners are respected by content */
+        }
+        table {
+            width: 100%; /* Table takes full width of its container */
+            border-collapse: separate; /* Allows border-radius on cells (though not directly applied here) */
+            border-spacing: 0; /* No space between cell borders */
+        }
+        th, td {
+            padding: 1rem 1.5rem; /* Ample padding inside cells */
+            text-align: left; /* Align text to the left */
+            border-bottom: 1px solid #e2e8f0; /* Light border between rows */
+        }
+        th {
+            background-color: #1a202c; /* Dark background for header */
+            color: #ffffff; /* White text for header */
+            font-weight: 600; /* Semi-bold font for headers */
+            white-space: nowrap; /* Prevent header text from wrapping */
+        }
+        tr:last-child td {
+            border-bottom: none; /* No border for the last row */
+        }
+        /* Zebra striping for rows for better readability */
+        tr:nth-child(even) {
+            background-color: #f7fafc; /* Lighter background for even rows */
+        }
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            th, td {
+                padding: 0.75rem 1rem; /* Adjust padding for smaller screens */
+            }
+        }
+        @media (max-width: 640px) {
+            /* For very small screens, make the table scrollable horizontally if content is too wide */
+            .container {
+                overflow-x: auto;
+                border-radius: 0.5rem; /* Slightly less rounded for very small screens */
+            }
+            table {
+                min-width: 600px; /* Ensure table has a minimum width for readability */
+            }
+            th, td {
+                white-space: normal; /* Allow text to wrap in cells */
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container rounded-xl">
+        <table class="text-sm md:text-base">
+            <thead>
+                <tr>
+                    <th class="rounded-tl-xl">Feature</th>
+                    <th>Path</th>
+                    <th class="rounded-tr-xl">Region</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>What it is</strong></td>
+                    <td>A sequence of drawing instructions (lines, curves).</td>
+                    <td>A defined, possibly complex, area on the screen.</td>
+                </tr>
+                <tr>
+                    <td><strong>Purpose</strong></td>
+                    <td>To define shapes for drawing (stroking, filling).</td>
+                    <td>To define an area for clipping, hit-testing, etc.</td>
+                </tr>
+                <tr>
+                    <td><strong>Visibility</strong></td>
+                    <td>Not visible until drawn (stroked/filled).</td>
+                    <td>Not directly visible, but affects what is visible.</td>
+                </tr>
+                <tr>
+                    <td><strong>Created From</strong></td>
+                    <td>Individual drawing commands.</td>
+                    <td>Simple shapes (rectangles, ellipses) or polygons, often combined.</td>
+                </tr>
+                <tr>
+                    <td><strong>How they Relate</strong></td>
+                    <td>A path can be converted into a region. For example, if you fill a path, the filled area is effectively a region. You can also create a region from the outline of a path using `PathToRegion`.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

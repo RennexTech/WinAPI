@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Information</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+
+        :root {
+            /* Color Palette */
+            --background-dark: #1A1A2E; /* Deep almost black */
+            --container-dark: #16213E; /* Dark blue-grey */
+            --text-light: #E0E0E0;     /* Off-white */
+            --accent-blue: #0F3460;    /* Darker blue for accents */
+            --header-color: #569CD6;   /* VS Code blue for headers */
+            --border-color: #0F3460;   /* Matching border */
+            --table-header-bg: #0C2C50; /* Slightly darker blue for table headers */
+            --table-row-even: #1D2A4B; /* Alternate row background */
+            --box-shadow-color: rgba(0, 0, 0, 0.4);
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif; /* A more modern, clean font */
+            margin: 0;
+            padding: 20px;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            display: flex; /* Centering content */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px; /* Slightly wider container */
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px; /* More rounded corners */
+            background-color: var(--container-dark);
+            box-shadow: 0 8px 25px var(--box-shadow-color); /* More pronounced shadow */
+            transition: transform var(--transition-speed) ease-in-out;
+        }
+
+        .container:hover {
+            transform: translateY(-5px); /* Subtle lift on hover */
+        }
+
+        h1 {
+            font-family: 'Space Mono', monospace; /* A techy, monospaced font for the title */
+            color: var(--header-color);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em; /* Larger title */
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(86, 156, 214, 0.5); /* Glowing effect */
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: separate; /* Allows for border-spacing */
+            border-spacing: 0; /* No space between borders by default */
+            margin-top: 25px;
+            overflow: hidden; /* Ensures rounded corners are applied to table */
+            border-radius: 8px; /* Rounded corners for the table itself */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for table */
+        }
+
+        .info-table th, .info-table td {
+            padding: 15px 20px; /* More padding */
+            text-align: left;
+            border-bottom: 1px solid var(--border-color); /* Separator lines */
+        }
+
+        .info-table th {
+            background-color: var(--table-header-bg);
+            color: var(--text-light);
+            font-weight: 700; /* Bold headers */
+            text-transform: uppercase; /* Uppercase for headers */
+            letter-spacing: 0.5px;
+            position: sticky; /* Sticky headers for scrolling tables (if applicable) */
+            top: 0;
+            z-index: 1;
+        }
+        
+        .info-table th:first-child {
+            border-top-left-radius: 8px;
+        }
+
+        .info-table th:last-child {
+            border-top-right-radius: 8px;
+        }
+
+        .info-table td {
+            background-color: var(--container-dark); /* Default cell background */
+        }
+
+        .info-table tr:nth-child(even) td {
+            background-color: var(--table-row-even); /* Alternate row color */
+        }
+
+        .info-table tr:hover td {
+            background-color: var(--accent-blue); /* Highlight row on hover */
+            cursor: pointer;
+            transition: background-color var(--transition-speed) ease;
+        }
+
+        .info-table tr:last-child td {
+            border-bottom: none; /* No border for the last row */
+        }
+
+        .info-table tr:last-child td:first-child {
+            border-bottom-left-radius: 8px;
+        }
+
+        .info-table tr:last-child td:last-child {
+            border-bottom-right-radius: 8px;
+        }
+
+        /* Styling for the bolded text in the 'Index' column */
+        .info-table td:first-child {
+            font-family: 'Space Mono', monospace; /* Monospaced font for indices */
+            color: var(--header-color); /* Matching header color */
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>System Display Metrics</h1>
+        <table class="info-table">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>What it Represents</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HORZRES</td>
+                    <td>Screen width in pixels</td>
+                </tr>
+                <tr>
+                    <td>VERTRES</td>
+                    <td>Screen height in pixels</td>
+                </tr>
+                <tr>
+                    <td>LOGPIXELSX</td>
+                    <td>Horizontal DPI (Dots Per Inch)</td>
+                </tr>
+                <tr>
+                    <td>LOGPIXELSY</td>
+                    <td>Vertical DPI (Dots Per Inch)</td>
+                </tr>
+                <tr>
+                    <td>BITSPIXEL</td>
+                    <td>Bits per pixel (color depth)</td>
+                </tr>
+                <tr>
+                    <td>NUMCOLORS</td>
+                    <td>Number of colors the device supports</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

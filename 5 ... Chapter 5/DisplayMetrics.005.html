@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Enhanced Display Metrics</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Roboto', sans-serif; /* A modern, clean font */
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Vibrant gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333; /* Default text color */
+  }
+  .container {
+    background-color: #ffffff;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Stronger, more appealing shadow */
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px; /* Slightly wider for better presentation */
+    animation: fadeIn 1s ease-out; /* Simple fade-in animation */
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  th, td {
+    padding: 15px 20px; /* More padding for a spacious look */
+    text-align: left;
+    border-bottom: 1px solid #eee; /* Lighter border */
+  }
+  th {
+    background-color: #e0f2f7; /* Light blue header background */
+    font-weight: 700; /* Bolder font for headers */
+    color: #1a237e; /* Darker blue text for headers */
+    text-transform: uppercase; /* Uppercase headers */
+    letter-spacing: 0.5px;
+  }
+  tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for readability */
+  }
+  tr:hover {
+    background-color: #e3f2fd; /* Light blue on hover */
+    transition: background-color 0.3s ease;
+  }
+  .reliable-col {
+    text-align: center;
+    font-weight: 700;
+  }
+  .reliable-yes {
+    color: #4CAF50; /* Green */
+  }
+  .reliable-sometimes {
+    color: #FFC107; /* Amber */
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>What It Tells You</th>
+        <th>Units</th>
+        <th class="reliable-col">Reliable?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>HORZRES</td>
+        <td>Width in pixels</td>
+        <td>Pixels</td>
+        <td class="reliable-col"><span class="reliable-yes">✅ Yes</span></td>
+      </tr>
+      <tr>
+        <td>VERTRES</td>
+        <td>Height in pixels</td>
+        <td>Pixels</td>
+        <td class="reliable-col"><span class="reliable-yes">✅ Yes</span></td>
+      </tr>
+      <tr>
+        <td>LOGPIXELSX/Y</td>
+        <td>DPI (dots per inch)</td>
+        <td>Pixels/inch</td>
+        <td class="reliable-col"><span class="reliable-yes">✅ Yes</span></td>
+      </tr>
+      <tr>
+        <td>HORZSIZE</td>
+        <td>Estimated physical width</td>
+        <td>Millimeters</td>
+        <td class="reliable-col"><span class="reliable-sometimes">⚠️ Sometimes</span></td>
+      </tr>
+      <tr>
+        <td>VERTSIZE</td>
+        <td>Estimated physical height</td>
+        <td>Millimeters</td>
+        <td class="reliable-col"><span class="reliable-sometimes">⚠️ Sometimes</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

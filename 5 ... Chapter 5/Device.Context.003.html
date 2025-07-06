@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Inside a Device Context (DC)?</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the Inter font and general layout */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font as specified */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align at the start to prevent vertical centering taking up too much space */
+            min-height: 100vh; /* Minimum height for full viewport */
+            background-color: #f0f4f8; /* Light background */
+            padding: 20px; /* Padding around the content */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+        .container {
+            max-width: 800px; /* Max width for the table container */
+            width: 100%; /* Full width up to max-width */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background-color: #ffffff; /* White background for the table card */
+            border-radius: 0.75rem; /* Rounded corners for the container */
+            overflow: hidden; /* Ensures rounded corners are respected by content */
+        }
+        table {
+            width: 100%; /* Table takes full width of its container */
+            border-collapse: separate; /* Allows border-radius on cells */
+            border-spacing: 0; /* No space between cell borders */
+        }
+        th, td {
+            padding: 1rem 1.5rem; /* Ample padding inside cells */
+            text-align: left; /* Align text to the left */
+            border-bottom: 1px solid #e2e8f0; /* Light border between rows */
+        }
+        th {
+            background-color: #1a202c; /* Dark background for header */
+            color: #ffffff; /* White text for header */
+            font-weight: 600; /* Semi-bold font for headers */
+            white-space: nowrap; /* Prevent header text from wrapping */
+        }
+        tr:last-child td {
+            border-bottom: none; /* No border for the last row */
+        }
+        /* Zebra striping for rows for better readability */
+        tr:nth-child(even) {
+            background-color: #f7fafc; /* Lighter background for even rows */
+        }
+        /* Ensure specific cells have rounded corners */
+        .rounded-tl-xl { border-top-left-radius: 0.75rem; }
+        .rounded-tr-xl { border-top-right-radius: 0.75rem; }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            th, td {
+                padding: 0.75rem 1rem; /* Adjust padding for smaller screens */
+            }
+        }
+        @media (max-width: 640px) {
+            /* For very small screens, allow table to scroll horizontally if content is too wide */
+            .container {
+                overflow-x: auto;
+                border-radius: 0.5rem; /* Slightly less rounded for very small screens */
+            }
+            table {
+                min-width: 500px; /* Ensure table has a minimum width for readability */
+            }
+            th, td {
+                white-space: normal; /* Allow text to wrap in cells */
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container rounded-xl">
+        <h2 class="text-2xl font-bold text-center py-6 px-4 bg-gray-800 text-white rounded-t-xl">
+            What's Inside Your Device Context (DC) Toolbox?
+        </h2>
+        <table class="text-sm md:text-base">
+            <thead>
+                <tr>
+                    <th class="rounded-tl-xl">Attribute (Tool/Setting)</th>
+                    <th class="rounded-tr-xl">What it Does for Your Drawing</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Font</strong></td>
+                    <td>Determines the style, size, and appearance of any text you draw (e.g., Arial, Times New Roman, bold, italic).</td>
+                </tr>
+                <tr>
+                    <td><strong>Text Color</strong></td>
+                    <td>Sets the color of the actual letters or characters you print on the screen.</td>
+                </tr>
+                <tr>
+                    <td><strong>Background Color</strong></td>
+                    <td>Defines the color that fills the space *behind* your text characters, making them stand out.</td>
+                </tr>
+                <tr>
+                    <td><strong>Pen</strong></td>
+                    <td>This is like your drawing pencil or marker. It controls how lines are drawn: their color, thickness, and style (solid, dashed, dotted).</td>
+                </tr>
+                <tr>
+                    <td><strong>Brush</strong></td>
+                    <td>Think of this as a paint roller or a fill tool. It determines how solid areas or shapes are filled in (e.g., a solid color, a pattern, or a bitmap image).</td>
+                </tr>
+                <tr>
+                    <td><strong>Clipping Region</strong></td>
+                    <td>This is a boundary or a "mask." It defines the specific area on the screen where your drawing operations are allowed to appear. Anything drawn outside this area will be invisible.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
