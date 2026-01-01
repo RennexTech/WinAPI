@@ -50,7 +50,7 @@ Anyone who's ever yelled "WHY ISN'T THERE A DECENT TUTORIAL FOR THIS?!" at 3 AM 
 
 I've poured my blood, sweat, and tears (mostly tears) into this project. It's my gift to you - the next generation of Windows programmers. 
 
-Am 23 by the way(2025), and am in no way a master at this stuff. 🧙‍♂️✨
+Am 24, and am in no way a master at this stuff. 🧙‍♂️✨
 
 Am here to keep the flame of low-level programming burning bright!
 
@@ -76,7 +76,7 @@ A love for low-level madness, unless you're a framework fanatic.
 
 🚫 Prohibited: Caffeine (Colorful notes need no caffeine; I promise you won’t sleep.)
 
-🚫 No contributions needed! Unless you're feeling generous. I accept both pull requests, **cash**, and pizzas. 🍕
+🚫 No contributions needed! Unless you're feeling generous. I accept both pull requests, **cash for pizzas**. 🍕
 
 There's a lot of code and notes, I've tried my best to remove API's and stuff, but If I accidentally forgot any private stuff, please tell me. I'll get it fixed.
 
@@ -84,14 +84,14 @@ There's a lot of code and notes, I've tried my best to remove API's and stuff, b
 
 **License:**
 
-🆓 It's all free and you can eat your money! 
+🆓 It's all free, no licenses. 
 
-Fork it, clone it, print it out, and use it as wallpaper. Go wild!
+Fork it, clone it, print it out. Go wild!
 
 ![image](https://github.com/user-attachments/assets/ed8107a5-8eff-4cc6-9b54-3cdfacfca65b)
 
-**Remember:** Every master was once a disaster. Rome wasn't built in a day, neither does a good WinAPI programmer, and forget about your past relationship with CreateWindowEx() . 😂
+**Remember:** Every master was once a disaster. Rome wasn't built in a day, neither does a good WinAPI programmer.
 
-Enjoy, my people!
+Enjoy, my people!👊
 
 Thanks for dropping by!
