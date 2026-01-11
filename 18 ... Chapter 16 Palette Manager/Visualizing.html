@@ -70,3 +70,169 @@
         <div style="color: #555; font-size: 0.7rem; letter-spacing: 2px;">GOLDEN_AMBER_VISUAL_CORE_V2</div>
     </div>
 </div>
+
+
+
+
+========================== DIBPAL.C ====================================== 
+
+
+
+
+
+<div style="max-width: 1000px; margin: 20px auto; background: #ffffff; border: 2px solid #FFD700; border-radius: 12px; font-family: 'Segoe UI', Tahoma, sans-serif; color: #333333; box-shadow: 0 10px 40px rgba(0,0,0,0.1); overflow: hidden;">
+
+    <div style="background: linear-gradient(90deg, #BF953F 0%, #FCF6BA 50%, #B38728 100%); padding: 25px; text-align: center; border-bottom: 2px solid #FFD700;">
+        <h1 style="margin: 0; color: #000; text-transform: uppercase; letter-spacing: 5px; font-size: 1.5rem; font-weight: 900;">
+            Palette Generation Strategies
+        </h1>
+    </div>
+
+    <div style="padding: 20px; background: #fafafa;">
+        <table style="width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: inset 0 0 0 1px #eee;">
+            <thead>
+                <tr style="text-align: left; background: #fffdf0; color: #8B6914; font-size: 0.85rem; border-bottom: 2px solid #FFD700;">
+                    <th style="padding: 15px; border-right: 1px solid #eee; width: 20%;">Function</th>
+                    <th style="padding: 15px; border-right: 1px solid #eee; width: 40%;">Strategy</th>
+                    <th style="padding: 15px;">Best For...</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 15px; font-family: 'Consolas', monospace; color: #B8860B; font-weight: bold; background: #fffcf5; border-right: 1px solid #eee;">DibPalDibTable</td>
+                    <td style="padding: 15px; border-right: 1px solid #eee; line-height: 1.4;">
+                        <strong style="color: #000;">The Copy-Cat.</strong> It reads the Color Table in the DIB file header and copies exact colors into a Windows Palette.
+                    </td>
+                    <td style="padding: 15px; color: #2d8a2d; font-weight: 500;">
+                        Images with a perfect 8-bit color table already attached.
+                    </td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 15px; font-family: 'Consolas', monospace; color: #B8860B; font-weight: bold; background: #fffcf5; border-right: 1px solid #eee;">DibPalVga</td>
+                    <td style="padding: 15px; border-right: 1px solid #eee; line-height: 1.4;">
+                        <strong style="color: #000;">The Retro.</strong> Creates the standard 16 colors (Bright/Dark Red, Cyan, etc.) used by old DOS/Win 3.1 machines.
+                    </td>
+                    <td style="padding: 15px; color: #2d8a2d; font-weight: 500;">
+                        Simulating old-school interfaces or very simple icons.
+                    </td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 15px; font-family: 'Consolas', monospace; color: #B8860B; font-weight: bold; background: #fffcf5; border-right: 1px solid #eee;">DibPalUniformGrays</td>
+                    <td style="padding: 15px; border-right: 1px solid #eee; line-height: 1.4;">
+                        <strong style="color: #000;">50 Shades of Grey.</strong> Ignores color; creates a gradient from Black (0,0,0) to White (255,255,255).
+                    </td>
+                    <td style="padding: 15px; color: #2d8a2d; font-weight: 500;">
+                        Black & White photos (Medical imaging, X-Rays).
+                    </td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 15px; font-family: 'Consolas', monospace; color: #B8860B; font-weight: bold; background: #fffcf5; border-right: 1px solid #eee;">DibPalUniformColors</td>
+                    <td style="padding: 15px; border-right: 1px solid #eee; line-height: 1.4;">
+                        <strong style="color: #000;">The Cube.</strong> Slices the RGB 3D cube evenly (e.g., 6 shades per Red, Green, and Blue).
+                    </td>
+                    <td style="padding: 15px; color: #2d8a2d; font-weight: 500;">
+                        Scientific data where you need a mathematically predictable spread.
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; font-family: 'Consolas', monospace; color: #B8860B; font-weight: bold; background: #fffcf5; border-right: 1px solid #eee;">DibPalAllPurpose</td>
+                    <td style="padding: 15px; border-right: 1px solid #eee; line-height: 1.4;">
+                        <strong style="color: #000;">The Safety Net.</strong> A "Best Hits" mix: 216 standard colors + 31 smooth grays + system colors.
+                    </td>
+                    <td style="padding: 15px; color: #2d8a2d; font-weight: 500;">
+                        General purpose use when image content is unknown.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div style="background: #fdfdfd; padding: 15px; border-top: 1px solid #FFD700; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem;">
+        <div style="color: #8B6914; font-weight: bold; letter-spacing: 1px;">
+            <span style="color: #FFD700;">●</span> AMBER GOLDEN ENGINE [LIGHT MODE]
+        </div>
+        <div style="color: #999; font-family: monospace;">PALETTE_GEN_v3.2</div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="max-width: 1000px; margin: 20px auto; background: #ffffff; border: 2px solid #FFD700; border-radius: 12px; font-family: 'Segoe UI', Tahoma, sans-serif; color: #333333; box-shadow: 0 10px 40px rgba(0,0,0,0.1); overflow: hidden;">
+
+    <div style="background: linear-gradient(90deg, #BF953F 0%, #FCF6BA 50%, #B38728 100%); padding: 25px; text-align: center; border-bottom: 2px solid #FFD700;">
+        <h1 style="margin: 0; color: #000; text-transform: uppercase; letter-spacing: 5px; font-size: 1.5rem; font-weight: 900;">
+            Palette Optimization Strategies
+        </h1>
+    </div>
+
+    <div style="padding: 20px; background: #fafafa;">
+        <table style="width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: inset 0 0 0 1px #eee;">
+            <thead>
+                <tr style="text-align: left; background: #fffdf0; color: #8B6914; font-size: 0.85rem; border-bottom: 2px solid #FFD700;">
+                    <th style="padding: 15px; border-right: 1px solid #eee; width: 22%;">Function</th>
+                    <th style="padding: 15px; border-right: 1px solid #eee; width: 20%;">Strategy</th>
+                    <th style="padding: 15px;">Best Use Case</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 15px; font-family: 'Consolas', monospace; color: #B8860B; font-weight: bold; background: #fffcf5; border-right: 1px solid #eee;">DibPalDibTable</td>
+                    <td style="padding: 15px; border-right: 1px solid #eee; font-weight: 600;">Copy/Paste</td>
+                    <td style="padding: 15px; color: #444;">Standard 8-bit BMP loads. Direct use of internal colors.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 15px; font-family: 'Consolas', monospace; color: #B8860B; font-weight: bold; background: #fffcf5; border-right: 1px solid #eee;">DibPalAllPurpose</td>
+                    <td style="padding: 15px; border-right: 1px solid #eee; font-weight: 600;">The Safety Net</td>
+                    <td style="padding: 15px; color: #444;">Displaying multiple different images simultaneously.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 15px; font-family: 'Consolas', monospace; color: #B8860B; font-weight: bold; background: #fffcf5; border-right: 1px solid #eee;">DibPalUniformGrays</td>
+                    <td style="padding: 15px; border-right: 1px solid #eee; font-weight: 600;">Gradient</td>
+                    <td style="padding: 15px; color: #444;">Medical imaging, X-Rays, or vintage B&W photography.</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 15px; font-family: 'Consolas', monospace; color: #B8860B; font-weight: bold; background: #fffcf5; border-right: 1px solid #eee;">DibPalVga</td>
+                    <td style="padding: 15px; border-right: 1px solid #eee; font-weight: 600;">Retro</td>
+                    <td style="padding: 15px; color: #444;">1990s interface simulation (16 classic bright colors).</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 15px; font-family: 'Consolas', monospace; color: #B8860B; font-weight: bold; background: #fffcf5; border-right: 1px solid #eee;">DibPalUniformColors</td>
+                    <td style="padding: 15px; border-right: 1px solid #eee; font-weight: 600;">Math Grid</td>
+                    <td style="padding: 15px; color: #444;">Scientific charts (Predictable 6x6x6 RGB distribution).</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 15px; font-family: 'Consolas', monospace; color: #B8860B; font-weight: bold; background: #fffcf5; border-right: 1px solid #eee;">DibPalPopularity</td>
+                    <td style="padding: 15px; border-right: 1px solid #eee; font-weight: 600;">Vote Count</td>
+                    <td style="padding: 15px; color: #444;">Fast conversion where tiny color details are secondary.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; font-family: 'Consolas', monospace; color: #B8860B; font-weight: bold; background: #fffcf5; border-right: 1px solid #eee;">DibPalMedianCut</td>
+                    <td style="padding: 15px; border-right: 1px solid #eee; font-weight: 600;">Smart Slicing</td>
+                    <td style="padding: 15px; color: #2d8a2d; font-weight: bold;">High-quality photo conversion to 256 colors. The gold standard.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div style="background: #fdfdfd; padding: 15px; border-top: 1px solid #FFD700; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem;">
+        <div style="color: #8B6914; font-weight: bold; letter-spacing: 1px;">
+            <span style="color: #FFD700;">●</span> AMBER GOLDEN ENGINE [LIGHT MODE]
+        </div>
+        <div style="color: #999; font-family: monospace;">STRATEGY_MATRIX_v4.0</div>
+    </div>
+</div>
+
+
