@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --gold-primary: #FFB300;
+            --gold-dark: #FFA000;
+            --gold-light: #FFF8E1;
+            --text-dark: #212121;
+            --border-color: #FFD54F;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 980px; /* Standard width for document screenshots */
+            border: 2px solid var(--gold-primary);
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+
+        h2 {
+            background: linear-gradient(90deg, var(--gold-primary), var(--gold-dark));
+            color: #000;
+            margin: 0;
+            padding: 12px;
+            text-align: center;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed; /* Forces fitment */
+            font-size: 11px; /* Optimized for "no-scroll" density */
+        }
+
+        th {
+            background-color: var(--gold-light);
+            color: var(--gold-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 8px 4px;
+            border-bottom: 2px solid var(--gold-primary);
+            border-right: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 6px 8px;
+            border-bottom: 1px solid #f0f0f0;
+            border-right: 1px solid #f0f0f0;
+            vertical-align: top;
+            line-height: 1.3;
+            color: var(--text-dark);
+            word-wrap: break-word;
+        }
+
+        /* Column Widths */
+        .col-feature { width: 14%; font-weight: bold; background-color: #fafafa; }
+        .col-emf { width: 28.6%; }
+
+        tr:nth-child(even) { background-color: #fffdf7; }
+        tr:last-child td { border-bottom: none; }
+        
+        strong { color: #b7791f; }
+        .highlight { color: #d48806; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>EMF Implementation Comparison Matrix</h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="col-feature">Feature / Aspect</th>
+                <th class="col-emf">EMF1 (Memory)</th>
+                <th class="col-emf">EMF2 (Disk)</th>
+                <th class="col-emf">EMF3 (Advanced Objects)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="col-feature">Storage Type</td>
+                <td>Memory-only metafile</td>
+                <td>Disk-based metafile</td>
+                <td>Disk-based + enhanced objects</td>
+            </tr>
+            <tr>
+                <td class="col-feature">Playback Timing</td>
+                <td>Immediate in <strong>WM_PAINT</strong> via handle</td>
+                <td>Reads from disk during <strong>WM_PAINT</strong></td>
+                <td>Created in <strong>WM_CREATE</strong>; read in PAINT</td>
+            </tr>
+            <tr>
+                <td class="col-feature">File Name</td>
+                <td><span class="highlight">None</span></td>
+                <td>"emf2.emf"</td>
+                <td>"emf3.emf"</td>
+            </tr>
+            <tr>
+                <td class="col-feature">Focus</td>
+                <td>Learning creation & playback</td>
+                <td>Disk-based persistence</td>
+                <td>Object lifecycle & playback fidelity</td>
+            </tr>
+            <tr>
+                <td class="col-feature">Complexity</td>
+                <td>Rectangle + 2 diagonal lines</td>
+                <td>Same as EMF1</td>
+                <td>Rect + lines + <span class="highlight">custom pen & brush</span></td>
+            </tr>
+            <tr>
+                <td class="col-feature">Resource Mgmt</td>
+                <td>Delete handle at <strong>WM_DESTROY</strong></td>
+                <td>Delete after disk creation/playback</td>
+                <td>Strict Create/Select/Restore/Delete cycle</td>
+            </tr>
+            <tr>
+                <td class="col-feature">Platform</td>
+                <td>General GDI usage</td>
+                <td>Win 98 / NT coord adjustments</td>
+                <td>NT check; relies on advanced features</td>
+            </tr>
+            <tr>
+                <td class="col-feature">Object Handling</td>
+                <td>Implicit</td>
+                <td>Implicit</td>
+                <td><span class="highlight">Explicit:</span> Unique IDs, DC selection</td>
+            </tr>
+            <tr>
+                <td class="col-feature">Scaling</td>
+                <td>Basic stretch</td>
+                <td>PrepareMetaFile mapping modes</td>
+                <td>Detailed object influence (rclBounds)</td>
+            </tr>
+            <tr>
+                <td class="col-feature">Metadata</td>
+                <td>None</td>
+                <td>Descriptive text in file</td>
+                <td>Expanded headers + object info info</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
