@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --slate: #2C3E50;
+            --amber-gold: #FFC107;
+            --soft-gold: #FFF8E1;
+            --text-main: #34495E;
+            --border: #D5D8DC;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .table-wrapper {
+            width: 850px;
+            border: 2px solid var(--slate);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background-color: var(--slate);
+            color: var(--amber-gold);
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            background: white;
+        }
+
+        th {
+            background-color: var(--soft-gold);
+            color: #856404;
+            font-size: 11px;
+            padding: 10px;
+            text-align: left;
+            border-bottom: 2px solid var(--amber-gold);
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border);
+            font-size: 13.5px;
+            color: var(--text-main);
+            line-height: 1.5;
+            vertical-align: top;
+        }
+
+        .aspect-col {
+            width: 25%;
+            font-weight: bold;
+            color: var(--slate);
+            background-color: #FDFEFE;
+            border-right: 1px solid var(--border);
+        }
+
+        .win-col { width: 37.5%; }
+        .midi-col { width: 37.5%; }
+
+        .highlight-win { border-left: 4px solid #3498DB; padding-left: 10px; }
+        .highlight-midi { border-left: 4px solid var(--amber-gold); padding-left: 10px; }
+
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background-color: #FBFCFC; }
+    </style>
+</head>
+<body>
+
+<div class="table-wrapper">
+    <div class="header">Resource Comparison: WinAPI vs. MIDI</div>
+    <table>
+        <thead>
+            <tr>
+                <th class="aspect-col">Feature</th>
+                <th class="win-col">WinAPI Resource (.RC)</th>
+                <th class="midi-col">MIDI File (.MID)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="aspect-col">Primary Content</td>
+                <td><div class="highlight-win">Menu, Dialog, Icon, and String definitions.</div></td>
+                <td><div class="highlight-midi">Notes, tempo, velocity, and channel data.</div></td>
+            </tr>
+            <tr>
+                <td class="aspect-col">Control Logic</td>
+                <td>Uses <strong>IDs and Flags</strong> (e.g., IDM_OPEN, WS_VISIBLE).</td>
+                <td>Uses <strong>Program Changes</strong> and <strong>Control Changes</strong> (CC).</td>
+            </tr>
+            <tr>
+                <td class="aspect-col">Interpreter</td>
+                <td>Interpreted by the <strong>Windows OS</strong> kernel/user modules.</td>
+                <td>Interpreted by a <strong>Synthesizer Engine</strong> (Hardware or Software).</td>
+            </tr>
+            <tr>
+                <td class="aspect-col">Final Output</td>
+                <td>Produces a <strong>User Interface</strong> (visual interaction).</td>
+                <td>Produces <strong>Sound</strong> (auditory sequence).</td>
+            </tr>
+            <tr>
+                <td class="aspect-col">Storage Logic</td>
+                <td>Binary data appended to the .EXE via Linker.</td>
+                <td>Standard MIDI File (SMF) chunks: MThd and MTrk.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
