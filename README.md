@@ -78,8 +78,9 @@ A love for low-level madness, unless you're a framework fanatic.
 
 🚫 Prohibited: Caffeine (Colorful notes need no caffeine; I promise you won’t sleep.)
 
-🚫 No contributions needed! Unless you're feeling generous. I accept both pull requests, **cash for pizzas**. Email me if you need another donation method... 🍕
+🚫 No code contributions needed! Unless you're feeling generous. I accept both pull requests, **cash for pizzas**. Email me if you need another donation method... 🍕
 
+Email me if you have something to tell me too.😉
 There's a lot of code and notes.
 
 ================================================
