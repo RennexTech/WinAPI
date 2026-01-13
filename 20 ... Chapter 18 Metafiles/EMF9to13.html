@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --amber-bg: #FFFBF0;
+            --amber-border: #FFC107;
+            --amber-header: #FFB300;
+            --text-dark: #202124;
+            --text-muted: #5f6368;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 950px;
+            border: 2px solid var(--amber-border);
+            border-radius: 6px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .title-bar {
+            background: linear-gradient(to right, var(--amber-header), #FFD54F);
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom: 2px solid var(--amber-border);
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            font-size: 11.5px;
+        }
+
+        th {
+            background-color: var(--amber-bg);
+            color: #856404;
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid var(--amber-border);
+            text-transform: uppercase;
+            font-size: 10px;
+        }
+
+        td {
+            padding: 7px 10px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+            line-height: 1.35;
+        }
+
+        .version-col { width: 10%; font-weight: bold; color: #b7791f; text-align: center; background: #fffdf5; }
+        .focus-col { width: 22%; font-weight: 600; }
+        .lesson-col { width: 43%; color: var(--text-dark); }
+        .one-liner-col { width: 25%; font-style: italic; color: var(--text-muted); border-right: none; }
+
+        tr:nth-child(even) { background-color: #fafafa; }
+
+        .rules-footer {
+            background-color: var(--amber-bg);
+            padding: 10px;
+            border-top: 2px solid var(--amber-border);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 11px;
+        }
+
+        .rule-item {
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .rule-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--amber-header);
+            font-weight: bold;
+        }
+
+        strong { color: #d48806; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="title-bar">Petzold EMF Series (9-13): Accurate Ruler Rendering</div>
+    <table>
+        <thead>
+            <tr>
+                <th class="version-col">Prog</th>
+                <th class="focus-col">Core Mechanic</th>
+                <th class="lesson-col">The Technical Lesson</th>
+                <th class="one-liner-col">The "Why"</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="version-col">EMF9</td>
+                <td><strong>rclFrame</strong> Usage</td>
+                <td>Switches from rclBounds to <strong>rclFrame (0.01mm units)</strong>. Fixes physical sizing errors seen in EMF8.</td>
+                <td>Renders correct physical size on both screen & printer.</td>
+            </tr>
+            <tr>
+                <td class="version-col">EMF10</td>
+                <td>Aspect Ratio</td>
+                <td>Calculates 6:1 ratio manually. Fits ruler in client area and <strong>centers</strong> it visually.</td>
+                <td>Scaling ≠ Stretching; ratio must be enforced by the coder.</td>
+            </tr>
+            <tr>
+                <td class="version-col">EMF11</td>
+                <td>Creation Mapping</td>
+                <td>Attempts <strong>MM_LOENGLISH</strong> during EMF creation to draw in inches.</td>
+                <td>Fragile approach; mapping modes inside EMFs often yield inconsistent results.</td>
+            </tr>
+            <tr>
+                <td class="version-col">EMF12</td>
+                <td>Controlled Mapping</td>
+                <td>Creation: Logical Units | Playback: <strong>MM_HIMETRIC</strong>. High discipline approach.</td>
+                <td>Mapping modes can work, but require strict testing across devices.</td>
+            </tr>
+            <tr>
+                <td class="version-col">EMF13</td>
+                <td>Playback Only</td>
+                <td>Does not map during creation. Reads size from header and uses <strong>Mapping during Playback</strong> only.</td>
+                <td>Safest: Playback mapping controls placement/scaling, not intrinsic size.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="rules-footer">
+        <div class="rule-box">
+            <div class="rule-item"><strong>Creation vs Playback:</strong> Creation mapping affects header; Playback mapping affects the destination rect.</div>
+            <div class="rule-item"><strong>Physical Accuracy:</strong> Use <strong>rclFrame</strong> for printers; rclBounds is only for UI previews.</div>
+        </div>
+        <div class="rule-box">
+            <div class="rule-item"><strong>Aspect Ratio:</strong> GDI will not protect you. You must calculate scaling factors manually.</div>
+            <div class="rule-item"><strong>Pixel Math:</strong> Scaling via header metadata is safer than relying on GDI Mapping Modes.</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
