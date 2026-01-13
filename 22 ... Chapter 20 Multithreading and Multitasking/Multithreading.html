@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --house-gold: #FFB300;
+            --backpack-amber: #FF8F00;
+            --bg-light: #FFFDF5;
+            --text-main: #2D3436;
+            --border-amber: #FFD54F;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 900px;
+            border: 2px solid var(--house-gold);
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--house-gold), var(--backpack-amber));
+            padding: 15px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 18px;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: var(--border-amber);
+            gap: 2px; /* Creates the center divider */
+        }
+
+        .column-header {
+            padding: 12px;
+            font-weight: 700;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+        }
+
+        .content-area {
+            background-color: white;
+            padding: 10px;
+        }
+
+        .item {
+            margin-bottom: 12px;
+            padding: 10px;
+            border-radius: 6px;
+            transition: transform 0.2s;
+        }
+
+        .shared-item {
+            border-left: 4px solid var(--house-gold);
+            background-color: #FFF9C4;
+        }
+
+        .private-item {
+            border-left: 4px solid var(--backpack-amber);
+            background-color: #FFF3E0;
+        }
+
+        .item-title {
+            font-weight: 800;
+            display: block;
+            margin-bottom: 3px;
+            font-size: 13px;
+            color: #5D4037;
+        }
+
+        .item-desc {
+            font-size: 12px;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        code {
+            background: rgba(0,0,0,0.05);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">Thread Memory Model: Shared vs. Private</div>
+    <div class="grid-container">
+        <div class="column-header">🏠 THE SHARED HOUSE (Process Scope)</div>
+        <div class="column-header">🎒 THE PRIVATE BACKPACK (Thread Scope)</div>
+        
+        <div class="content-area">
+            <div class="item shared-item">
+                <span class="item-title">Global Variables</span>
+                <span class="item-desc">All threads see and can modify global data. Requires synchronization (Mutex/CriticalSection).</span>
+            </div>
+            <div class="item shared-item">
+                <span class="item-title">Heap Memory</span>
+                <span class="item-desc">Pointers from <code>malloc</code> or <code>new</code> are accessible by everyone if the address is shared.</span>
+            </div>
+            <div class="item shared-item">
+                <span class="item-title">System Resources</span>
+                <span class="item-desc">Open files, kernel handles, and Window objects (HWND) belong to the process.</span>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="item private-item">
+                <span class="item-title">The Stack</span>
+                <span class="item-desc">Each thread has its own function call history, return addresses, and local <code>auto</code> variables.</span>
+            </div>
+            <div class="item private-item">
+                <span class="item-title">CPU Registers</span>
+                <span class="item-desc">Context includes the Instruction Pointer (EIP/RIP) and Stack Pointer (ESP/RSP).</span>
+            </div>
+            <div class="item private-item">
+                <span class="item-title">Thread Local Storage (TLS)</span>
+                <span class="item-desc">Special <code>__declspec(thread)</code> variables that are unique instances for every thread.</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
