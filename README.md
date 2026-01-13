@@ -2,7 +2,9 @@
 
 Hey there am Nick and I welcome you as my Windows API adventurer! 
 
-You've just teleported into my WinAPI goldmine, you're the lucky few who've found me. Buckle up! Don't skip, read this first. Please.
+You've just teleported into my WinAPI goldmine, you're the lucky few who've found me. Buckle up! 
+
+Don't skip, read this first. Please.
 
 ================================================
 
@@ -70,15 +72,15 @@ Am here to keep the flame of low-level programming burning bright!
 
 **Prerequisites and contributions:**
 
-C/C++ programming knowledge. (I already have a C repo if you don’t mind starting there). 
+C/C++ programming knowledge. (I already have a C and ASM repo if you don’t mind starting there). 
 
 A love for low-level madness, unless you're a framework fanatic.
 
 🚫 Prohibited: Caffeine (Colorful notes need no caffeine; I promise you won’t sleep.)
 
-🚫 No contributions needed! Unless you're feeling generous. I accept both pull requests, **cash for pizzas**. 🍕
+🚫 No contributions needed! Unless you're feeling generous. I accept both pull requests, **cash for pizzas**. Email me if you need another donation method... 🍕
 
-There's a lot of code and notes, I've tried my best to remove API's and stuff, but If I accidentally forgot any private stuff, please tell me. I'll get it fixed.
+There's a lot of code and notes.
 
 ================================================
 
@@ -86,7 +88,7 @@ There's a lot of code and notes, I've tried my best to remove API's and stuff, b
 
 🆓 It's all free, no licenses. 
 
-Fork it, clone it, print it out. Go wild!
+Fork it, clone it, print it out. 
 
 ![image](https://github.com/user-attachments/assets/ed8107a5-8eff-4cc6-9b54-3cdfacfca65b)
 
