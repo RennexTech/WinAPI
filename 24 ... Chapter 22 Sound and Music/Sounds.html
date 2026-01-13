@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --primary: #1A237E; /* Deep Indigo */
+            --accent: #3949AB;
+            --bg-light: #F8F9FA;
+            --text-dark: #212121;
+            --row-alt: #F1F3F9;
+            --border: #C5CAE9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+            background-color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .table-container {
+            width: 980px;
+            border: 1px solid var(--primary);
+            border-radius: 4px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-title {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            font-size: 12px;
+        }
+
+        th {
+            background-color: var(--bg-light);
+            color: var(--primary);
+            font-weight: 800;
+            padding: 10px;
+            text-align: left;
+            border-bottom: 2px solid var(--primary);
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+
+        td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #E0E0E0;
+            vertical-align: top;
+            line-height: 1.4;
+            color: var(--text-dark);
+            word-wrap: break-word;
+        }
+
+        .feature-col {
+            width: 15%;
+            font-weight: 700;
+            background-color: var(--bg-light);
+            border-right: 1px solid var(--border);
+            color: var(--accent);
+        }
+
+        .api-tag {
+            font-family: 'Consolas', monospace;
+            background: #E8EAF6;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 11px;
+        }
+
+        /* Highlight Performance & Complexity */
+        .perf-high { color: #2E7D32; font-weight: bold; }
+        .comp-high { color: #C62828; font-weight: bold; }
+
+        tr:nth-child(even) { background-color: var(--row-alt); }
+        tr:hover { background-color: #E3F2FD; }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <div class="header-title">Win32 Multimedia: Audio Recording Implementations</div>
+    <table>
+        <thead>
+            <tr>
+                <th class="feature-col">Feature</th>
+                <th>RECORD1 (Waveform)</th>
+                <th>RECORD2 (MCI Message)</th>
+                <th>RECORD3 (MCI String)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="feature-col">API Architecture</td>
+                <td>Low-level Waveform API</td>
+                <td>MCI Message-based</td>
+                <td>MCI String-based</td>
+            </tr>
+            <tr>
+                <td class="feature-col">Data Handling</td>
+                <td>Memory buffers (Double-buffering)</td>
+                <td>Disk Files</td>
+                <td>Disk Files</td>
+            </tr>
+            <tr>
+                <td class="feature-col">Special Effects</td>
+                <td>Reverse, Repeat, Speedup</td>
+                <td>None</td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td class="feature-col">Notifications</td>
+                <td><span class="api-tag">MM_WIM_DATA</span> / <span class="api-tag">MM_WOM_DONE</span></td>
+                <td><span class="api-tag">MM_MCINOTIFY</span></td>
+                <td>None (Manual Polling)</td>
+            </tr>
+            <tr>
+                <td class="feature-col">Complexity</td>
+                <td><span class="comp-high">High</span> (Buffer Mgmt)</td>
+                <td>Medium</td>
+                <td>Low</td>
+            </tr>
+            <tr>
+                <td class="feature-col">Performance</td>
+                <td><span class="perf-high">High / Real-time</span></td>
+                <td>Moderate</td>
+                <td>Moderate</td>
+            </tr>
+            <tr>
+                <td class="feature-col">File Handling</td>
+                <td>Optional (Manual I/O)</td>
+                <td>Required</td>
+                <td>Required</td>
+            </tr>
+            <tr>
+                <td class="feature-col">Error Handling</td>
+                <td>Manual Error Codes</td>
+                <td>Manual + <code>mciGetErrorString</code></td>
+                <td>Wrapped in <code>mciExecute</code></td>
+            </tr>
+            <tr>
+                <td class="feature-col">UI Dependency</td>
+                <td>Manual Button States</td>
+                <td>Auto via Notifications</td>
+                <td>Manual update loop</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
