@@ -1,8 +1,14 @@
 🚀 **Welcome to the WinAPI Wormhole!**
 
-Hey there am Nick and I welcome you as my Windows API adventurer! 
+Before we even talk abit, just understand this, WinAPI is the core of reverse engineering, period! Open any reversing tool and whatever we learn together from this repo is exactly what you will find. eg This is pestudio, you can literally see WinAPI functions that are explained in my notes appearing straight up. And if you've read through the whole repo, there's nothing new or scary over here. That's why this repo is super important. 
 
-You've just teleported into my WinAPI goldmine, you're the lucky few who've found me. Buckle up! 
+<img width="1287" height="876" alt="image" src="https://github.com/user-attachments/assets/bfa44f14-9331-474b-98fc-5c769c374c03" />
+
+Look at IDA dissassembler, same case:
+
+<img width="915" height="597" alt="image" src="https://github.com/user-attachments/assets/096065f7-dd9e-4e79-925b-6980801a4e1f" />
+
+Hey there am Nick and I welcome you as my Windows API adventurer! You're the lucky few who've found me. Buckle up! 
 
 Don't skip, read this first. Please.
 
