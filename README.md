@@ -10,6 +10,21 @@ Look at IDA dissassembler, WinAPI appears again...
 
 Hey there am Nick and I welcome you as my Windows API adventurer! You're the lucky few who've found me. Buckle up! 
 
+Hit a wall while reversing →
+Find the exact WinAPI call that’s blocking you →
+Open the docs →
+Read only what you need →
+Go back to the debugger →
+Watch it live →
+Knowledge clicks 🔒
+
+Confusion
+→ Targeted reading
+→ Live debugging
+→ Understanding
+→ Muscle memory
+→ Use Microsoft's documentation sometimes
+
 **🕵️‍♂️My Background: The Quest for WinAPI Knowledge**
 
 Picture this: There I was, lost in the digital deserts, searching for knowledge mines containing **organized** Windows API wisdom. 🔍
